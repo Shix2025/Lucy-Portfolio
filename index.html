@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucy Njenga - Executive & Virtual Assistant Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            transition: border-color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            border-bottom-color: white;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 700;
+        }
+        
+        .intro-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .skill-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+        
+        .skill-card h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .skill-card ul {
+            list-style: none;
+            font-size: 14px;
+        }
+        
+        .skill-card li {
+            padding: 6px 0;
+            color: #555;
+        }
+        
+        .skill-card li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .achievement {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            transition: all 0.3s;
+        }
+        
+        .achievement:hover {
+            background: #f0f2f5;
+            transform: translateX(5px);
+        }
+        
+        .achievement h4 {
+            color: #764ba2;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .achievement p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .metric {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-top: 8px;
+            margin-right: 8px;
+        }
+        
+        .tool-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        
+        .tool {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 12px 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #667eea;
+            transition: all 0.3s;
+        }
+        
+        .tool:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title-section h3 {
+            color: #667eea;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .job-title-section p {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .job-dates {
+            color: #999;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .responsibility {
+            margin: 12px 0;
+            padding-left: 20px;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .responsibility:before {
+            content: "▸ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-left: -12px;
+            margin-right: 8px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.1));
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .highlight h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .certification {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .certification:last-child {
+            border-bottom: none;
+        }
+        
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .cert-details h4 {
+            color: #333;
+            margin-bottom: 3px;
+            font-size: 15px;
+        }
+        
+        .cert-details p {
+            color: #999;
+            font-size: 13px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+        
+        .remote-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 35px 20px;
+            }
+            
+            header h1 {
+                font-size: 32px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lucy Njenga</h1>
+            <p class="tagline">Executive Assistant & Virtual Assistant Professional</p>
+            <p class="tagline" style="font-size: 16px; opacity: 0.9;">Remote Support Specialist | Operations Management | Executive Coordination</p>
+            <div class="contact-info">
+                <span>📞 +254 721238860</span>
+                <a href="mailto:shikomel@gmail.com">📧 shikomel@gmail.com</a>
+                <span>📍 Nairobi, Kenya (Remote)</span>
+            </div>
+            <div style="margin-top: 15px;">
+                <span class="remote-badge">✓ 100% Remote Ready</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <!-- Professional Summary -->
+            <div class="section">
+                <div class="intro-box">
+                    <strong>Dedicated Executive & Virtual Assistant</strong> with 6+ years of proven experience providing comprehensive administrative support to C-level executives and managing complex organizational operations. Expert in remote work excellence, confidential affairs management, and seamless virtual coordination across multiple teams and time zones. CPA-K certified with a strong foundation in operational efficiency, technology proficiency, and strategic support delivery. Committed to enabling executive productivity and organizational success through meticulous attention to detail and proactive problem-solving.
+                </div>
+            </div>
+
+            <!-- Core VA Skills -->
+            <div class="section">
+                <h2 class="section-title">Executive & Virtual Assistant Skills</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>📅 Calendar & Schedule Management</h3>
+                        <ul>
+                            <li>Executive calendar coordination</li>
+                            <li>Meeting scheduling & coordination</li>
+                            <li>Multi-stakeholder scheduling</li>
+                            <li>Conflict resolution & optimization</li>
+                            <li>Time zone management</li>
+                            <li>Recurring meeting administration</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>📧 Email & Communication Management</h3>
+                        <ul>
+                            <li>Email inbox management</li>
+                            <li>Message prioritization & filtering</li>
+                            <li>Correspondence drafting</li>
+                            <li>Communication protocols</li>
+                            <li>Multi-platform communication</li>
+                            <li>Stakeholder correspondence</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>✈️ Travel & Logistics Management</h3>
+                        <ul>
+                            <li>Flight & accommodation booking</li>
+                            <li>Itinerary planning & coordination</li>
+                            <li>Travel expense management</li>
+                            <li>Visa & documentation support</li>
+                            <li>Ground transportation</li>
+                            <li>Travel contingency planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>📋 Document & Record Management</h3>
+                        <ul>
+                            <li>Confidential document handling</li>
+                            <li>Contract management</li>
+                            <li>File organization & archival</li>
+                            <li>Board document preparation</li>
+                            <li>Meeting minutes & notes</li>
+                            <li>Record keeping & compliance</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>🤝 Meeting & Event Coordination</h3>
+                        <ul>
+                            <li>Meeting preparation & setup</li>
+                            <li>Agenda development</li>
+                            <li>Event planning & logistics</li>
+                            <li>Virtual meeting facilitation</li>
+                            <li>Follow-up coordination</li>
+                            <li>Attendee communication</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>🔗 Cross-Functional Coordination</h3>
+                        <ul>
+                            <li>Stakeholder management</li>
+                            <li>Inter-department liaison</li>
+                            <li>Vendor coordination</li>
+                            <li>Multi-entity operations</li>
+                            <li>Team collaboration</li>
+                            <li>Relationship building</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology & Tools -->
+            <div class="section">
+                <h2 class="section-title">Technology & Tools Proficiency</h2>
+                <div class="tool-box">
+                    <div class="tool">Calendly</div>
+                    <div class="tool">Microsoft Outlook</div>
+                    <div class="tool">Google Workspace</div>
+                    <div class="tool">Zoom</div>
+                    <div class="tool">Microsoft Teams</div>
+                    <div class="tool">Slack</div>
+                    <div class="tool">Asana</div>
+                    <div class="tool">Monday.com</div>
+                    <div class="tool">Notion</div>
+                    <div class="tool">Trello</div>
+                    <div class="tool">Google Drive</div>
+                    <div class="tool">Dropbox</div>
+                    <div class="tool">Adobe Suite</div>
+                    <div class="tool">Canva</div>
+                    <div class="tool">Skype</div>
+                    <div class="tool">Microsoft Office 365</div>
+                    <div class="tool">Oracle NetSuite</div>
+                    <div class="tool">QuickBooks</div>
+                    <div class="tool">Hubspot</div>
+                    <div class="tool">Expensify</div>
+                </div>
+            </div>
+
+            <!-- Visual Management Examples -->
+            <div class="section">
+                <h2 class="section-title">Management Expertise in Action</h2>
+                
+                <!-- Email Management -->
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+                    <h3 style="color: #667eea; margin-bottom: 20px; font-size: 20px;">📧 Email & Inbox Management</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+                            <h4 style="color: #667eea; margin-bottom: 10px;">✓ Priority Inbox System</h4>
+                            <ul style="list-style: none; color: #555; font-size: 14px;">
+                                <li>🔴 Urgent/Critical (Immediate action)</li>
+                                <li>🟡 Important (Within 24hrs)</li>
+                                <li>🟢 Follow-up (This week)</li>
+                                <li>⚪ Informational (Archive)</li>
+                            </ul>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #764ba2;">
+                            <h4 style="color: #764ba2; margin-bottom: 10px;">✓ Email Management Services</h4>
+                            <ul style="list-style: none; color: #555; font-size: 14px;">
+                                <li>📤 Compose & draft responses</li>
+                                <li>🗂️ Organize & categorize emails</li>
+                                <li>📌 Flag & follow-up system</li>
+                                <li>🚀 Auto-response management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #e9ecef;">
+                        <p style="color: #555; margin-bottom: 10px;"><strong>Email Management Process:</strong></p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; color: #666;">
+                            <div style="text-align: center;">
+                                <div style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: bold;">1</div>
+                                <div>Screen & Filter</div>
+                            </div>
+                            <div style="color: #667eea; font-weight: bold;">→</div>
+                            <div style="text-align: center;">
+                                <div style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: bold;">2</div>
+                                <div>Prioritize & Tag</div>
+                            </div>
+                            <div style="color: #667eea; font-weight: bold;">→</div>
+                            <div style="text-align: center;">
+                                <div style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: bold;">3</div>
+                                <div>Draft Responses</div>
+                            </div>
+                            <div style="color: #667eea; font-weight: bold;">→</div>
+                            <div style="text-align: center;">
+                                <div style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: bold;">4</div>
+                                <div>Archive & Organize</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Management -->
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+                    <h3 style="color: #667eea; margin-bottom: 20px; font-size: 20px;">📅 Calendar & Schedule Management</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+                            <h4 style="color: #667eea; margin-bottom: 10px;">✓ Calendar Optimization</h4>
+                            <ul style="list-style: none; color: #555; font-size: 14px;">
+                                <li>🎯 Block focus time for deep work</li>
+                                <li>👥 Manage meeting clusters</li>
+                                <li>⏰ Buffer time between meetings</li>
+                                <li>🌍 Time zone coordination</li>
+                            </ul>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #764ba2;">
+                            <h4 style="color: #764ba2; margin-bottom: 10px;">✓ Meeting Services</h4>
+                            <ul style="list-style: none; color: #555; font-size: 14px;">
+                                <li>📍 Prepare agendas & materials</li>
+                                <li>📞 Coordinate attendees</li>
+                                <li>📝 Record minutes & action items</li>
+                                <li>✉️ Send follow-up summaries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); padding: 20px; border-radius: 8px; border: 1px solid #667eea30;">
+                        <p style="color: #555; margin-bottom: 15px;"><strong>Sample Weekly Calendar Structure:</strong></p>
+                        <div style="font-size: 13px; color: #666; line-height: 1.8; font-family: 'Courier New', monospace;">
+                            <div style="display: flex; margin-bottom: 10px;">
+                                <span style="width: 80px; color: #667eea; font-weight: bold;">Monday:</span>
+                                <span>Strategic Planning (9am) → 1:1s (10-12pm) → Focus Time (1-5pm)</span>
+                            </div>
+                            <div style="display: flex; margin-bottom: 10px;">
+                                <span style="width: 80px; color: #667eea; font-weight: bold;">Tuesday:</span>
+                                <span>Team Sync (10am) → Client Call (2pm) → Admin Block (3-5pm)</span>
+                            </div>
+                            <div style="display: flex; margin-bottom: 10px;">
+                                <span style="width: 80px; color: #667eea; font-weight: bold;">Wednesday:</span>
+                                <span>Department Meetings (10am-12pm) → Flexible Blocks (rest of day)</span>
+                            </div>
+                            <div style="display: flex; margin-bottom: 10px;">
+                                <span style="width: 80px; color: #667eea; font-weight: bold;">Thursday:</span>
+                                <span>1:1 Coaching (9am) → Budget Review (11am) → Focus Time (1-5pm)</span>
+                            </div>
+                            <div style="display: flex;">
+                                <span style="width: 80px; color: #667eea; font-weight: bold;">Friday:</span>
+                                <span>Weekly Review (10am) → Planning Next Week (2pm) → Buffer Time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travel & Logistics -->
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 10px;">
+                    <h3 style="color: #667eea; margin-bottom: 20px; font-size: 20px;">✈️ Travel & Logistics Coordination</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; border-top: 4px solid #667eea; text-align: center;">
+                            <div style="font-size: 28px; margin-bottom: 8px;">🛫</div>
+                            <h4 style="color: #667eea; margin-bottom: 8px; font-size: 14px;">Flights & Transport</h4>
+                            <p style="font-size: 12px; color: #666;">Flight booking, seat selection, ground transport coordination</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border-top: 4px solid #667eea; text-align: center;">
+                            <div style="font-size: 28px; margin-bottom: 8px;">🏨</div>
+                            <h4 style="color: #667eea; margin-bottom: 8px; font-size: 14px;">Accommodations</h4>
+                            <p style="font-size: 12px; color: #666;">Hotel booking, room preferences, amenities coordination</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border-top: 4px solid #667eea; text-align: center;">
+                            <div style="font-size: 28px; margin-bottom: 8px;">📋</div>
+                            <h4 style="color: #667eea; margin-bottom: 8px; font-size: 14px;">Itinerary</h4>
+                            <p style="font-size: 12px; color: #666;">Complete travel itinerary, contingency plans</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border-top: 4px solid #667eea; text-align: center;">
+                            <div style="font-size: 28px; margin-bottom: 8px;">💰</div>
+                            <h4 style="color: #667eea; margin-bottom: 8px; font-size: 14px;">Expenses</h4>
+                            <p style="font-size: 12px; color: #666;">Expense tracking, reimbursement coordination</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border-top: 4px solid #667eea; text-align: center;">
+                            <div style="font-size: 28px; margin-bottom: 8px;">📝</div>
+                            <h4 style="color: #667eea; margin-bottom: 8px; font-size: 14px;">Visas & Docs</h4>
+                            <p style="font-size: 12px; color: #666;">Visa requirements, documentation support</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border-top: 4px solid #667eea; text-align: center;">
+                            <div style="font-size: 28px; margin-bottom: 8px;">🔄</div>
+                            <h4 style="color: #667eea; margin-bottom: 8px; font-size: 14px;">Contingency</h4>
+                            <p style="font-size: 12px; color: #666;">Backup plans for flight delays, cancellations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Achievements -->
+            <div class="section">
+                <h2 class="section-title">Key Achievements & Impact</h2>
+                
+                <div class="achievement">
+                    <h4>✓ Executive Operations Excellence</h4>
+                    <p>Supported CEO with 100% on-time delivery for all strategic meetings, confidential document management, and executive affairs across 4 business subsidiaries, enabling seamless C-level operations and decision-making.</p>
+                    <span class="metric">4 Subsidiaries Managed</span>
+                    <span class="metric">100% On-Time Delivery</span>
+                </div>
+
+                <div class="achievement">
+                    <h4>✓ Calendar & Meeting Optimization</h4>
+                    <p>Managed complex executive calendars across multiple stakeholders and time zones, eliminating scheduling conflicts and ensuring optimal use of executive time while maintaining strategic priority alignment.</p>
+                    <span class="metric">Multi-Time Zone Coordination</span>
+                    <span class="metric">Zero Conflicts</span>
+                </div>
+
+                <div class="achievement">
+                    <h4>✓ Confidentiality & Data Management</h4>
+                    <p>Maintained and safeguarded all confidential contracts, board documents, and sensitive records with meticulous attention to detail and strict adherence to confidentiality protocols—zero breaches.</p>
+                    <span class="metric">Zero Breaches</span>
+                    <span class="metric">100% Confidentiality</span>
+                </div>
+
+                <div class="achievement">
+                    <h4>✓ Travel & Logistics Coordination</h4>
+                    <p>Managed executive travel arrangements including international flights, accommodations, ground transportation, and visa coordination, ensuring seamless travel experiences and budget optimization.</p>
+                    <span class="metric">International Travel</span>
+                    <span class="metric">Budget Optimization</span>
+                </div>
+
+                <div class="achievement">
+                    <h4>✓ Vendor & Supplier Management</h4>
+                    <p>Negotiated and coordinated with 50+ vendors and suppliers, managing relationships, payment schedules, and procurement processes while achieving 50% cost reduction in administrative expenses through vendor optimization.</p>
+                    <span class="metric">50+ Vendors Managed</span>
+                    <span class="metric">50% Cost Reduction</span>
+                </div>
+
+                <div class="achievement">
+                    <h4>✓ Remote Operations Excellence</h4>
+                    <p>Seamlessly transitioned to fully remote operations, maintaining 100% productivity and communication standards while supporting executive and operational teams across geographically dispersed locations.</p>
+                    <span class="metric">Remote Ready</span>
+                    <span class="metric">100% Uptime</span>
+                </div>
+            </div>
+
+            <!-- Professional Experience -->
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title-section">
+                            <h3>Executive Assistant to CEO & Operations Coordinator</h3>
+                            <p>Evopark Limited (4 Subsidiaries) | Remote & Onsite</p>
+                        </div>
+                        <div class="job-dates">Nov 2020 - Nov 2024</div>
+                    </div>
+                    <div class="responsibility">Managed all executive office operations including CEO calendar coordination, strategic meeting preparation, and calendar optimization across multiple stakeholders and time zones</div>
+                    <div class="responsibility">Handled all confidential correspondence, contracts, board documents, and sensitive records with meticulous security protocols and zero breach incidents</div>
+                    <div class="responsibility">Coordinated executive travel including international flights, accommodations, ground transportation, visa arrangements, and expense management</div>
+                    <div class="responsibility">Organized and executed executive-level meetings, strategic trainings, and corporate events with flawless logistics and professional documentation</div>
+                    <div class="responsibility">Managed vendor relationships and supplier coordination for 50+ partners, negotiating better terms and achieving 50% reduction in administrative costs</div>
+                    <div class="responsibility">Liaised between CEO, board members, departments across 4 subsidiaries, and external stakeholders, ensuring clear communication and coordination</div>
+                    <div class="responsibility">Supervised office administration staff, established best practices, and streamlined workflows to improve productivity and reduce overhead</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title-section">
+                            <h3>Operations & Administrative Manager</h3>
+                            <p>HIS & HERS BOUTIQUE | Self-Employed</p>
+                        </div>
+                        <div class="job-dates">Mar 2016 - Nov 2020</div>
+                    </div>
+                    <div class="responsibility">Directed all operational, financial, and administrative activities including stakeholder engagement and vendor management</div>
+                    <div class="responsibility">Managed inventory operations, vendor orders, and supply chain coordination ensuring timely replenishment and cost control</div>
+                    <div class="responsibility">Coordinated marketing initiatives and operational strategy to boost profitability and enhance market visibility</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title-section">
+                            <h3>Accounts & Administration Assistant</h3>
+                            <p>Athi River Steel Plant</p>
+                        </div>
+                        <div class="job-dates">Mar 2014 - Nov 2014</div>
+                    </div>
+                    <div class="responsibility">Coordinated financial documentation, vendor communications, and administrative support</div>
+                    <div class="responsibility">Supported month-end closing procedures and coordinated with internal/external auditors</div>
+                </div>
+            </div>
+
+            <!-- Why Hire Me -->
+            <div class="section">
+                <h2 class="section-title">Why Choose Me as Your VA</h2>
+                
+                <div class="highlight">
+                    <h4>✓ Remote Work Expert</h4>
+                    <p>Fully experienced in remote operations with proven ability to deliver excellence without office presence. Equipped with the right tools, systems, and discipline to maintain productivity, communication, and confidentiality across all channels.</p>
+                </div>
+
+                <div class="highlight">
+                    <h4>✓ Proactive Problem Solver</h4>
+                    <p>Don't wait to be told what needs to be done. I anticipate executive needs, identify inefficiencies, and implement solutions that save time and reduce stress. Your success is my success.</p>
+                </div>
+
+                <div class="highlight">
+                    <h4>✓ Confidentiality Champion</h4>
+                    <p>Understanding the sensitivity of executive affairs, I maintain unwavering confidentiality protocols. Your confidential matters stay confidential—period. Zero breaches in 6+ years.</p>
+                </div>
+
+                <div class="highlight">
+                    <h4>✓ Tech-Savvy & Adaptable</h4>
+                    <p>Comfortable with new tools and platforms. I quickly master technology and can manage complex tech stacks including project management tools, communication platforms, and scheduling systems.</p>
+                </div>
+
+                <div class="highlight">
+                    <h4>✓ Financial & Operations Background</h4>
+                    <p>CPA-K certified with accounting expertise means I understand business operations, compliance requirements, and financial processes—adding strategic value beyond typical VA duties.</p>
+                </div>
+
+                <div class="highlight">
+                    <h4>✓ Proven Multi-Entity Experience</h4>
+                    <p>Successfully managed operations across 4 subsidiaries, demonstrating ability to handle complexity, maintain consistency, and coordinate across multiple teams and locations simultaneously.</p>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section">
+                <h2 class="section-title">Certifications & Education</h2>
+                
+                <div class="certification">
+                    <div class="cert-icon">✓</div>
+                    <div class="cert-details">
+                        <h4>Certified Public Accountant - K (CPA-K)</h4>
+                        <p>KASNEB | 2015 - Demonstrates financial acumen and regulatory compliance knowledge</p>
+                    </div>
+                </div>
+
+                <div class="certification">
+                    <div class="cert-icon">✓</div>
+                    <div class="cert-details">
+                        <h4>Bachelor of Commerce</h4>
+                        <p>KCA University | In Progress - Business administration and organizational management</p>
+                    </div>
+                </div>
+
+                <div class="certification">
+                    <div class="cert-icon">✓</div>
+                    <div class="cert-details">
+                        <h4>Diploma in IT</h4>
+                        <p>University of Nairobi | 2009 - Technology systems and digital proficiency</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="section" style="text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 40px; border-radius: 10px;">
+                <h3 style="color: #333; margin-bottom: 15px; font-size: 24px;">Ready to Elevate Your Executive Operations?</h3>
+                <p style="color: #666; margin-bottom: 20px; font-size: 16px;">Let me handle the details so you can focus on strategic priorities. Available for immediate remote engagement.</p>
+                <a href="mailto:shikomel@gmail.com" class="cta-button">Get In Touch Today</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Lucy Njenga © 2025 | Executive & Virtual Assistant | 100% Remote Ready</p>
+            <p>Phone: +254 721238860 | Email: shikomel@gmail.com | Location: Nairobi, Kenya</p>
+        </footer>
+    </div>
+</body>
+</html>
